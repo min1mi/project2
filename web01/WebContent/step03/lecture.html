@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>게시판 관리</title>
+</head>
+<body>
+<h1>게시글 등록</h1>
+
+<form action="LectureInsert" method="POST">
+강의명: <input type="text" name="title"><br>
+설명: <input type="text" name="dscp"><br>
+시작일: <input type="date" name="sdt"><br>
+종료일: <input type="date" name="edt"><br>
+수강가능인원: <input type="text" name="qty"><br>
+수업료: <input type="text" name="pric"><br>
+총시간: <input type="text" name="thrs"><br>
+강의실: <select id='classroom' name="classroom">
+<option value='0'>강의실을 선택하세요</option>
+</select><br>
+매니저: <select id='manager' name="manager">
+<option value='0'>매니저를 선택하세요</option>
+</select><br>
+<button>등록</button>
+</form>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js">
+var classroomSelect = $('#classroom'),
+    managerSelect = $('#manager')
+
+for (var s of list) {
+  $("<option>").html("<td>" + s.memberNo +
+            "</td><td><a href='#' data-no='" + s.memberNo + "' class='view-link'>" + s.name +
+            "</a></td><td>" + s.tel +
+            "</td><td>" + s.email +
+            "</td><td>" + (s.working ? "재직중" : "실업") + "</td>")
+            .appendTo(tbody)
+}
+</script>
+</body>
+</html>
